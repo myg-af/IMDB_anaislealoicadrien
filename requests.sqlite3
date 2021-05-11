@@ -1,0 +1,33 @@
+SELECT * FROM movies;
+SELECT public, COUNT(*) AS movies, AVG(runtime) AS AVG_runtime, AVG(rating) AS AVG_rating FROM movies group by public order by AVG_rating DESC;
+
+SELECT * FROM realisators;
+
+-- Nb de films pour chaque type de public (tout public) 
+SELECT public, COUNT(*) AS nb_movies FROM movies group by public order by nb_movies;
+
+
+UPDATE movies SET public = 'Tous publics' WHERE public = 'Tous Public';
+
+
+SELECT * FROM movies WHERE year != -1;
+
+
+
+
+SELECT movies.title, realisators.name FROM movies 
+JOIN realisators 
+ON realisators.movie_id = movies.id;
+
+
+
+
+
+
+
+
+
+
+
+
+
